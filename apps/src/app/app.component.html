@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Great hackathon</h1>
+  <div>
+    <input type="text" name="mail" [(ngModel)]="email">
+
+    <button (click)="addNewCode()">
+      Add new item
+    </button>
+  </div>
+
+
+  <button (click)="addNewCodeFromApi()">
+    Get name from api
+  </button>
+
+  <div class="list">
+    <div class="list-item" *ngFor="let code of codes">
+      <p>
+        {{code.getMail()}}
+      </p>
+      <p>
+        {{code.getCode()}}
+      </p>
+      <button (click)="removeCode(code)">Delete</button>
+    </div>
+  </div>
+
+</div>
